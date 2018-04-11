@@ -7,3 +7,5 @@ when hovered over
 
 *******************************************************
 *******************************************************
+
+Answer: Inline style was taking precedence over .css style sheet

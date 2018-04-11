@@ -13,7 +13,7 @@ function renderTransactions(transactions) {
 	});
 
 	finalHTML += transactionsHTML.join();
-
+	
 	return finalHTML;
 }
 

@@ -7,3 +7,7 @@ enter key. I thought it was supposed to filter as I type?
 
 *******************************************************
 *******************************************************
+
+$('.search-input').on('change', function(e) {
+
+  filter event is firing on 'change' should be on 'input'

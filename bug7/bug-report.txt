@@ -6,3 +6,7 @@ Every row in the transaction list has a weird comma preceding it...
 
 *******************************************************
 *******************************************************
+
+finalHTML += transactionsHTML.join();
+  
+  .join is appending the comma, change to join('')

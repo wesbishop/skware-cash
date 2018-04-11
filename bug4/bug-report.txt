@@ -6,3 +6,6 @@ The transaction filtering is case sensitive. That's annoying!
 
 *******************************************************
 *******************************************************
+
+Solution#1: implement .toLowerCase() in  ('.search-input').on('input', function(e) {
+Solution#2: implement Regular Expressoin in  ('.search-input').on('input', function(e) {

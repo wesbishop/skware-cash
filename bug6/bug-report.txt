@@ -6,3 +6,8 @@ The transaction list isn't showing!
 
 *******************************************************
 *******************************************************
+var transactionsHTML = _.map(transactions, function() {
+  
+   Did not accept a parameter, change to function(transaction)
+
+

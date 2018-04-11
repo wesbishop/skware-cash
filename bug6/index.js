@@ -1,7 +1,7 @@
 function renderTransactions(transactions) {
 	var finalHTML = '<div class="buffer">TRANSACTIONS</div>';
 
-	var transactionsHTML = _.map(transactions, function() {
+	var transactionsHTML = _.map(transactions, function(transaction) {
 		var transactionHTML = '<div class="transaction">';
 		transactionHTML += '<div class="name">'   + transaction.name   + '</div>';
 		transactionHTML += '<div class="for">' 	  + transaction.for    + '</div>';
@@ -30,7 +30,7 @@ $(document).ready(function(){
 			return foundInName || foundInFor || foundInDate || foundInAmount;
 		});
 
-		$('.transactions').html(renderTransactions(filteredData));
+    $('.transactions').html(renderTransactions(filteredData));
 	});
 
 });

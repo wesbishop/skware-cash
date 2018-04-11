@@ -6,3 +6,7 @@ There's no styling on the page at all!
 
 *******************************************************
 *******************************************************
+
+<link rel="stylesheet" type="text/css" href="../index.css">
+  was pointing to wrong location, change to "./index.ss"
+  

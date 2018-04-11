@@ -20,13 +20,31 @@ function renderTransactions(transactions) {
 $(document).ready(function(){
 	$('.transactions').html(renderTransactions(fullTransactionData));
 	
+
+  //Solution 1: implement toLowerCase()
 	$('.search-input').on('input', function(e) {
-		var searchString = e.target.value;
+
+    //Solution 1: implement toLowerCase()
+		// var searchString = String(e.target.value).toLowerCase();
+		// var filteredData = _.filter(fullTransactionData, function(transaction){
+		// 	var foundInName    = transaction.name.toLowerCase().indexOf(searchString) > -1;
+		// 	var foundInFor     = transaction.for.toLowerCase().indexOf(searchString) > -1;
+		// 	var foundInDate    = transaction.date.toLowerCase().indexOf(searchString) > -1;
+		// 	var foundInAmount  = transaction.amount.toLowerCase().indexOf(searchString) > -1;
+		// 	return foundInName || foundInFor || foundInDate || foundInAmount;
+		// });
+
+    //Solution 2: use Regular Expression
+		var searchString = String(e.target.value).trim();
+		var searchString = searchString.replace(".","[.]");
+		var searchString = searchString.replace("$","[$]");
+		var regex = RegExp(searchString,'i');
+
 		var filteredData = _.filter(fullTransactionData, function(transaction){
-			var foundInName    = transaction.name.indexOf(searchString) > -1;
-			var foundInFor     = transaction.for.indexOf(searchString) > -1;
-			var foundInDate    = transaction.date.indexOf(searchString) > -1;
-			var foundInAmount  = transaction.amount.indexOf(searchString) > -1;
+			var foundInName    = regex.test(transaction.name);
+			var foundInFor     = regex.test(transaction.for) ;
+			var foundInDate    = regex.test(transaction.date);
+			var foundInAmount  = regex.test(transaction.amount);
 			return foundInName || foundInFor || foundInDate || foundInAmount;
 		});
 
